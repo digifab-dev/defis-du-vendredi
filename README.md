@@ -14,7 +14,7 @@
   git checkout VotreNom
   ```
 
-- Envoyez vos modifications avec une commit
+- Envoyez vos modifications avec une commit:
 
   ```
   git add fichierModifié
