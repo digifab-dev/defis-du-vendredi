@@ -1,6 +1,6 @@
 # Ceci est le depot pour les défis de kévin le vendredi.
 
-## Comment l'utiliser
+## Comment l'utiliser:
 
 - Créez une bonne à votre nom:
 
@@ -17,6 +17,7 @@
 - Envoyez vos modifications avec un commit:
 
   ```
+  git pull
   git add fichierModifié
   git commit -m message du commit
   git push --set-upstream origin VotreNom
