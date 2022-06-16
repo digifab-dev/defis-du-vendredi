@@ -1,0 +1,191 @@
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  z-index: 100;
+  overflow: hidden;
+}
+
+h1,
+p {
+  z-index: 100;
+  transition: all 1s ease;
+}
+
+.dark_square {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(1, 10, 23);
+  bottom: 0%;
+  left: 0%;
+  transform-origin: left bottom;
+  transform: scale(0);
+
+  border-radius: 100px;
+  transition: all 0.4s ease;
+}
+
+p {
+  margin-top: 50px;
+  width: 70ch;
+}
+
+input {
+  display: none;
+}
+
+label {
+  width: 120px;
+  height: 120px;
+  background-color: lightblue;
+  border-radius: 50%;
+
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+input:checked ~ .dark_square {
+  transform: scale(1);
+  border-radius: 0px;
+}
+
+input:checked ~ .button > .cloud {
+  visibility: hidden;
+}
+
+input:checked ~ .button > .black_circle {
+  left: -10%;
+  top: -10%;
+}
+
+input:checked ~ .button {
+  background-color: black;
+}
+
+input:checked ~ h1,
+input:checked ~ p {
+  color: white;
+}
+
+label > * {
+  z-index: 1;
+}
+
+.yellow_circle {
+  width: 100px;
+  height: 100px;
+  background-color: yellow;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 0;
+}
+
+.cloud {
+  width: 60px;
+  height: 20px;
+  background-color: white;
+  /* border: 1px solid black; */
+  box-sizing: border-box;
+  border-radius: 50%;
+
+  animation: nuage 5s ease infinite;
+}
+
+.cloud1 {
+  align-self: flex-end;
+}
+
+.cloud2 {
+  align-self: flex-start;
+}
+
+@keyframes nuage {
+  from {
+    transform: translateX(-150px);
+  }
+
+  to {
+    transform: translateX(150px);
+  }
+}
+
+.black_circle {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: black;
+  border-radius: 50%;
+
+  left: -60%;
+  top: -60%;
+  transition: all 0.4s ease;
+}
+
+@keyframes star {
+  0% {
+    opacity: 0%;
+  }
+  50% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 0%;
+  }
+}
+
+.star {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: yellow;
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+
+  animation: star 3s ease infinite;
+}
+
+.star1 {
+  top: 10px;
+  animation-delay: 1.4s;
+}
+
+.star2 {
+  left: 10px;
+  animation-delay: 2.4s;
+}
