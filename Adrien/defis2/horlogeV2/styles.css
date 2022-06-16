@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.montre {
+    background-image: url("watch_bleu.svg");
+    width: 500px;
+    height: 500px;
+
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.cadran {
+
+    width: 40%;
+    height: 40%;
+
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.rond {
+    width: 20px;
+    height: 20px;
+    background-color: white;
+
+    border: 4px solid orange;
+    border-radius: 50%;
+}
+
+.cadran::before,
+.cadran::after {
+    height: 4px;
+    display: block;
+    content: "";
+
+    animation: tourner linear infinite;
+}
+
+.cadran::before {
+    width: 30%;
+    background-color: white;
+
+    transform-origin: calc(100% + 10px);
+    animation-duration: 30s;
+}
+
+.cadran::after {
+
+    width: 15%;
+    background-color: orange;
+
+    transform-origin: -10px;
+    margin-right: 15%;
+
+    animation-duration: 30s;
+}
+
+@keyframes tourner {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
