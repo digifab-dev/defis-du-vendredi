@@ -14,10 +14,15 @@
   git checkout VotreNom
   ```
 
-- Envoyez vos modifications avec un commit:
+- Mettez votre branche à jour:
 
   ```
   git pull
+  ```
+
+- Envoyez vos modifications avec un commit:
+
+  ```
   git add fichierModifié
   git commit -m message du commit
   git push --set-upstream origin VotreNom
